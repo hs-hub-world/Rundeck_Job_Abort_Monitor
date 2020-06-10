@@ -11,6 +11,7 @@ How it works:
 
     update -> $RDAuthToken Variable/param below
         Generate rundeck api token that will have access to Rundeck project/jobs to monitor
+		You may find instructions here: https://docs.rundeck.com/docs/manual/10-user.html
 
 
 #Step-2
