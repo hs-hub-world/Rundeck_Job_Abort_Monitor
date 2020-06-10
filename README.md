@@ -11,7 +11,7 @@ How it works:
 	- download all ps1 files into C:\RDExec_Scripts  
 	- using Rundeck WinRM project create a job targeting the selected Node from above steps.  
 		- Rundeck Job should have a workflow command step with command:  
-		 C:\RDExec_Scripts\Sample_RD_script.ps1 -RDJobID ${job.id} -ExecJOBID ${job.execid}
+		 C:\RDExec_Scripts\Sample_RD_script.ps1 -RDJobID ${job.id} -ExecJOBID ${job.execid}  
 		- Save the Rundeck Job  
 
 #Step-2
