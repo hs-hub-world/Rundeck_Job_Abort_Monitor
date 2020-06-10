@@ -27,8 +27,8 @@ How it works:
 
 Optional:  
 	- In case it's not working set the $DebugMOde=$true in the RDJobAbortMonitor.ps1 script it will generate this file: "C:\Temp\RDJobAbortMonitor.log"  
-	-  Ensure the URL is correct
-	-  Ensure the JobID and ExecJobID's are being passed correctly
+	-  Ensure the URL is correct  
+	-  Ensure the JobID and ExecJobID's are being passed correctly  
 	
 
 
