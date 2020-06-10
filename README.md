@@ -15,11 +15,8 @@ How it works:
 		- Save the Rundeck Job  
 
 #Step-2  
-    - update -> *$RDServerURL* Variable/Param in the RDJobAbortMonitor.ps1  
-        This must be your rundeck URL
-
-    - update -> *$RDAuthToken* Variable/param in the RDJobAbortMonitor.ps1  
-        Generate rundeck api token that has access to Rundeck project/jobs  
+    - update *$RDServerURL* Variable/Param in the RDJobAbortMonitor.ps1  
+    - update *$RDAuthToken* Variable/param in the RDJobAbortMonitor.ps1  with api token that has access to Rundeck project/jobs  
 
 #Step-3  
 	- Run the Rundeck Job. The job should output:  
