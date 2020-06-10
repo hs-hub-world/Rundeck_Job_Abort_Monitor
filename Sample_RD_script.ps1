@@ -7,8 +7,8 @@
 #>
 
 param(
-    $RDJobID   = "",
-    $ExecJOBID = ""
+    $RDJobID,
+    $ExecJOBID
 )
 
 #Dot source the $RDJobMonitor function
