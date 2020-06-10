@@ -25,7 +25,7 @@ How it works:
 		 If you Kill/Cancel this job this script will execute: rundeck_CancelJob.ps1  "  
 	 
 
-Optional:
+Optional:  
 	- In case it's not working set the $DebugMOde=$true in the RDJobAbortMonitor.ps1 script it will generate this file: "C:\Temp\RDJobAbortMonitor.log"  
 	-  Ensure the URL is correct
 	-  Ensure the JobID and ExecJobID's are being passed correctly
