@@ -20,15 +20,13 @@ How it works:
     - update -> *$RDAuthToken* Variable/param in the RDJobAbortMonitor.ps1
         Generate rundeck api token that has access to Rundeck project/jobs
 
-
-
 #Step-3
 	- Run the Rundeck Job. The job should output:
-		 "Rundeck Job is Running..."
-		 " This job will sleep for 60-seconds"
-		 " If you Kill/Cancel this job this script will execute:$($CommandToExecOnAbort)"
+		 -Rundeck Job is Running...
+		 -This job will sleep for 60-seconds
+		 -If you Kill/Cancel this job this script will execute:$($CommandToExecOnAbort)
 	 
-	 - If cancel the job in 60-sec the rundeck_CancelJob.ps1 should execute.
+Note: If the job is canceled before 60-sec the rundeck_CancelJob.ps1 will execute.
 
 
 That's all.
