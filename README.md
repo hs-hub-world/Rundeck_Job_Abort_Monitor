@@ -7,31 +7,30 @@ Since Rundeck does not have an event handler when a job is Killed/Canceled/Abort
 How it works:
 
 #Step-1
-    update -> $RDServerURL Variable/Param in the RDJobAbortMonitor.ps1
-        This must be your rundeck URL
-
-    update -> $RDAuthToken Variable/param in the RDJobAbortMonitor.ps1
-        Generate rundeck api token that has access to Rundeck project/jobs
+	- on the target node create foders: C:\Temp and C:\RDExec_Scripts
+	- download all ps1 files into C:\RDExec_Scripts
+	- using Rundeck WinRM project create a job targeting the selected Node from above steps.
+		- Rundeck Job should have a workflow command step with command: C:\RDExec_Scripts\Sample_RD_script.ps1
+		- Save the Rundeck Job
 
 #Step-2
-	Load this module from the executing script by Dot sourcing
-		. "C:\RDExec_Scripts\RDJobAbortMonitor.ps1"  -ErrorAction Stop
+    - update -> *$RDServerURL* Variable/Param in the RDJobAbortMonitor.ps1
+        This must be your rundeck URL
+
+    - update -> *$RDAuthToken* Variable/param in the RDJobAbortMonitor.ps1
+        Generate rundeck api token that has access to Rundeck project/jobs
+
+
 
 #Step-3
-	Prepare the Abort script. This script will execute when RD Job is aborted
-		#Sample-1 (without arguments)
-		$CommandToExecOnAbort = "C:\RDExec_Scripts\rundeck_CancelJob.ps1"
-
-		#Sample-2 (with argumetns)
-    $CommandToExecOnAbort = "C:\RDExec_Scripts\rundeck_CancelJob.ps1 -Param1 $($Value1) -Param2 $($Value2)"
-
-
-#Step-4
-	Start the Abort Monitoring job with your execution
-		#NOTE The "invoke-command" process will spawn-up a completely separate process from the current process so it does not inherit/become child of current process - thus will not terminate with the current process.
-		$JobName="RDJobMonitor_$($ExecJOBID)"
-		Invoke-Command -JobName "$JobName" -ComputerName . -AsJob    -ScriptBlock $RDJobMonitor  -ArgumentList $RDJobID, $ExecJOBID, $CommandToExecOnAbort |Out-Null
+	- Run the Rundeck Job. The job should output:
+		 "Rundeck Job is Running..."
+		 " This job will sleep for 60-seconds"
+		 " If you Kill/Cancel this job this script will execute:$($CommandToExecOnAbort)"
+	 
+	 - If cancel the job in 60-sec the rundeck_CancelJob.ps1 should execute.
 
 
 That's all.
+
 
