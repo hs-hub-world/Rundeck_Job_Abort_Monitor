@@ -22,10 +22,8 @@ How it works:
 	- Run the Rundeck Job. The job should output:  
 		 "Rundeck Job is Running...  
 		 This job will sleep for 60-seconds  
-		 If you Kill/Cancel this job this script will execute:$($CommandToExecOnAbort)  "
+		 If you Kill/Cancel this job this script will execute: rundeck_CancelJob.ps1  "
 	 
-Note: If the job is canceled before 60-sec the rundeck_CancelJob.ps1 will execute.
-
 
 That's all.
 
